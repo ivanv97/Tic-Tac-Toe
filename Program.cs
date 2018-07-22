@@ -7,23 +7,12 @@ using System.Threading.Tasks;
 namespace Tic_Tac_Toe
 {
     class Program
-    {        
+    {
         static void Main(string[] args)
         {
-            Player X = new Player('X');
-            Player O = new Player('O');
-            do
-            {
-                Player.GetInput(X);
-                if (GameEngine.GameOver())
-                    break;
-                if (GameEngine.Draw())
-                    break;
-                GameEngine.VisualizeBoard();
-                Player.GetInput(O);
-                GameEngine.VisualizeBoard();
-            } while (!GameEngine.GameOver());
-            GameEngine.VisualizeBoard();
+            Player xPlayer = new Player('X');
+            Player oPlayer = new Player('O');
+            GameEngine.StartGame(xPlayer, oPlayer);
             Console.ReadKey();
         }
     }
